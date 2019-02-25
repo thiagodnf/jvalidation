@@ -2,7 +2,6 @@ package org.jvalidation;
 
 import java.util.List;
 
-import org.jvalidation.matcher.Is;
 import org.jvalidation.matcher.Matcher;
 import org.jvalidation.matcher.Not;
 import org.jvalidation.matcher.list.Empty;
@@ -24,12 +23,8 @@ public class Matchers {
 		return new NullValue();
 	}
 	
-	public static <T> Matcher<T> not(Matcher<T> matcher) {
+	public static <T extends Object> Matcher<T> not(Matcher<T> matcher) {
 		return new Not<T>(matcher);
-	}
-	
-	public static <T> Matcher<T> is(Matcher<T> matcher) {
-		return new Is<T>(matcher);
 	}
 	
 	public static <T extends Number> GreaterThan greaterThan(T value) {
