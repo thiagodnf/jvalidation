@@ -48,4 +48,12 @@ public class AssertiveTest {
 		assertNotNull(output);
 		assertTrue(target == output);
 	}
+	
+	@Test
+	public void shouldReturn() {
+		
+		assertThrows(IllegalArgumentException.class, () -> {
+			Assertive.require(Arrays.asList(1), empty());
+		});
+	}
 }
