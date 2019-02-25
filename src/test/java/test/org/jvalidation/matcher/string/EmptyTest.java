@@ -1,4 +1,4 @@
-package test.org.jvalidation.matcher.list;
+package test.org.jvalidation.matcher.string;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -6,10 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.jvalidation.Assertive.require;
 import static org.jvalidation.Matchers.empty;
 
-import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
-import org.jvalidation.matcher.list.Empty;
+import org.jvalidation.matcher.string.Empty;
 
 public class EmptyTest {
 	
@@ -22,20 +20,21 @@ public class EmptyTest {
 	}
 	
 	@Test
-	public void shouldThrowsAnExceptionWhenTheTargetIsInvalid() {
+	public void shouldReturnTrueForTheCorrectInteger() {
+		assertTrue(new Empty().execute(""));
+		assertTrue(new Empty().execute("  "));
+	}
+	
+	@Test
+	public void shouldReturnFalseForTheInCorrectInteger() {
+		assertFalse(new Empty().execute("a"));
+	}
+	
+	@Test
+	public void shouldThrowAnExceptionWhenTheTargetIsInvalid() {
 		
-		assertThrows(Exception.class, () -> {
-			require(Arrays.asList(1), empty());
+		assertThrows(IllegalArgumentException.class, () -> {
+			require("a", empty());
 		});
 	}
-	
-	@Test
-	public void shouldReturnTrueWithValidTarget() {
-		assertTrue(new Empty().execute(Arrays.asList()));
-	}
-	
-	@Test
-	public void shouldReturnFalseWithInvValidTarget() {
-		assertFalse(new Empty().execute(Arrays.asList(2)));
-	}		
 }

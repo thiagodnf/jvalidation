@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.jvalidation.matcher.Matcher;
 import org.jvalidation.matcher.Not;
-import org.jvalidation.matcher.list.Empty;
+import org.jvalidation.matcher.list.EmptyList;
 import org.jvalidation.matcher.list.Size;
 import org.jvalidation.matcher.number.Between;
 import org.jvalidation.matcher.number.GreaterThan;
@@ -12,6 +12,8 @@ import org.jvalidation.matcher.number.GreaterThanOrEqualTo;
 import org.jvalidation.matcher.number.LessThan;
 import org.jvalidation.matcher.number.LessThanOrEqualTo;
 import org.jvalidation.matcher.object.NullValue;
+import org.jvalidation.matcher.string.Blank;
+import org.jvalidation.matcher.string.Empty;
 
 public class Matchers {
 	
@@ -47,11 +49,19 @@ public class Matchers {
 		return new Between(a,b);
 	}
 	
-	public static <T extends List<?>> Empty empty() {
-		return new Empty();
+	public static <T extends List<?>> EmptyList emptyList() {
+		return new EmptyList();
 	}
 	
 	public static <T extends List<?>> Size size(int size) {
 		return new Size(size);
+	}
+	
+	public static <T extends CharSequence> Blank blank() {
+		return new Blank();
+	}
+	
+	public static <T extends CharSequence> Empty empty() {
+		return new Empty();
 	}
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.jvalidation.matcher.Matcher;
 
-public class Empty implements Matcher<List<?>> {
+public class EmptyList implements Matcher<List<?>> {
 	
 	@Override
 	public void throwException() {
