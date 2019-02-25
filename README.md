@@ -1,6 +1,6 @@
 # JValidation
 
-A simple validation tool to express pre- and post-conditions in your code
+A simple, fast and light-weight validation tool to express pre- and post-conditions in your code
 
 ## Status
 [![Build Status](https://travis-ci.org/jvalidation/jvalidation.svg?branch=master)](https://travis-ci.org/jvalidation/jvalidation)
