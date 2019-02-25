@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<name>jvalidation</name>
 	<packaging>jar</packaging>
-	<description>JValidation </description>
+	<description>A simple, fast and light-weight validation tool to express pre- and post-conditions in your code</description>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -18,6 +18,17 @@
 			src/test/**
 		</sonar.test.exclusions>
 	</properties>
+	<developers>
+		<developer>
+			<name>Thiago Ferreira</name>
+			<organization>thiagodnf</organization>
+			<organizationUrl>http://github.com/thiagodnf</organizationUrl>
+		</developer>
+	</developers>
+	<organization>
+		<name>JValidation</name>
+		<url>http://github.com/jvalidation</url>
+	</organization>
 	<dependencies>
 		<!-- JUnit Test Framework -->
 		<dependency>
