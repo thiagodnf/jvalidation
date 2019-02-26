@@ -7,8 +7,8 @@ public class LessThan extends ComparisonNumber {
 	}
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The value should be less than " + value);
+	public String getMessage() {
+		return "The value should be less than " + value;
 	}
 
 	@Override

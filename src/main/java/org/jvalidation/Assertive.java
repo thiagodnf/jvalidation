@@ -15,7 +15,7 @@ public class Assertive {
 		}
 
 		if (!matcher.execute(target)) {
-			matcher.throwException();
+			throw new IllegalArgumentException(matcher.getMessage());
 		}
 
 		return target;

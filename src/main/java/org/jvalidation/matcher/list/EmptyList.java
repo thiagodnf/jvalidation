@@ -7,8 +7,8 @@ import org.jvalidation.matcher.Matcher;
 public class EmptyList implements Matcher<List<?>> {
 	
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The list is empty");
+	public String getMessage() {
+		return "The list is empty";
 	}
 
 	@Override

@@ -14,8 +14,8 @@ public class Between implements Matcher<Number> {
 	}
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The value should be between " + start);
+	public String getMessage() {
+		return "The value should %s be between " + start;
 	}
 
 	@Override

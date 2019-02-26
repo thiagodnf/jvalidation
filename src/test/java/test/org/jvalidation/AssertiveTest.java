@@ -26,8 +26,8 @@ public class AssertiveTest {
 		}
 
 		@Override
-		public void throwException() {
-			throw new IllegalArgumentException();
+		public String getMessage() {
+			return "Error Message";
 		}
 	}
 	

@@ -7,8 +7,8 @@ public class LessThanOrEqualTo extends LessThan {
 	}
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The value should be less than or equal to " + value);
+	public String getMessage() {
+		return "The value should be less than or equal to " + value;
 	}
 	
 	@Override

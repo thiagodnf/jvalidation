@@ -24,7 +24,7 @@ public class NullValueTest {
 	@Test
 	public void shouldThrowAnExceptionWhenTheTargetIsInvalid() {
 		
-		assertThrows(NullPointerException.class, () -> {
+		assertThrows(IllegalArgumentException.class, () -> {
 			require(new Integer(2), nullValue());
 		});
 	}

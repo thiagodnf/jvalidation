@@ -22,7 +22,7 @@ public class GreaterThan extends ComparisonNumber {
 	}
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The value should be greater than " + value);
+	public String getMessage() {
+		return "The value should be greater than " + value;
 	}	
 }

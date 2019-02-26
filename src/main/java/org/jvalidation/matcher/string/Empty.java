@@ -5,8 +5,8 @@ import org.jvalidation.matcher.Matcher;
 public class Empty implements Matcher<String> {
 	
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The string is empty");
+	public String getMessage() {
+		return "The string is empty";
 	}
 
 	@Override

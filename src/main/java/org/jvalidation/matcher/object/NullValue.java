@@ -10,7 +10,7 @@ public class NullValue implements Matcher<Object> {
 	}
 	
 	@Override
-	public void throwException() {
-		throw new NullPointerException();
+	public String getMessage() {
+		return "The value is null";
 	}
 }

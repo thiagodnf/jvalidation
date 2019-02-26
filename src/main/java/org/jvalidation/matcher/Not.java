@@ -14,7 +14,7 @@ public class Not<T> implements Matcher<T>{
 	}
 	
 	@Override
-	public void throwException() {
-		matcher.throwException();
+	public String getMessage() {
+		return matcher.getMessage().replace("%s", "not");
 	}
 }

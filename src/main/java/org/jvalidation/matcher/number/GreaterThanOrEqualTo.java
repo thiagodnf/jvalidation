@@ -22,7 +22,7 @@ public class GreaterThanOrEqualTo extends GreaterThan {
 	}
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The value should be greater than or equal to " + value);
+	public String getMessage() {
+		return "The value should be greater than or equal to " + value;
 	}
 }

@@ -6,8 +6,8 @@ import org.jvalidation.matcher.object.NullValue;
 public class Blank implements Matcher<String> {
 
 	@Override
-	public void throwException() {
-		throw new IllegalArgumentException("The string is blank");
+	public String getMessage() {
+		return "The string is %s blank";
 	}
 
 	@Override
