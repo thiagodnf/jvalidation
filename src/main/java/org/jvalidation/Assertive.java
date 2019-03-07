@@ -1,23 +1,30 @@
 package org.jvalidation;
 
-import org.jvalidation.matcher.Matcher;
+import org.jvalidation.matcher.number.IntegerMatcher;
+import org.jvalidation.matcher.object.ObjectMatcher;
 
 public class Assertive {
 	
-	private Assertive() throws InstantiationException {
-		throw new InstantiationException("Instances of this type are forbidden");
+	protected Object object;
+
+	public Assertive(Object object) {
+		this.object = object;
 	}
 
-	public static <T extends Object> T require(T target, Matcher<T> matcher) {
+	public static Assertive require(Object object) {
+		return new Assertive(object);
+	}
 
-		if (matcher == null) {
-			throw new NullPointerException("The matcher should not be null");
+	public IntegerMatcher isInteger() {
+
+		if (!(object instanceof Integer)) {
+			throw new IllegalArgumentException("The value is not an integer");
 		}
 
-		if (!matcher.execute(target)) {
-			throw new IllegalArgumentException(matcher.getMessage());
-		}
-
-		return target;
+		return new IntegerMatcher((int) object);
+	}
+	
+	public ObjectMatcher isObject() {
+		return new ObjectMatcher(object);
 	}
 }

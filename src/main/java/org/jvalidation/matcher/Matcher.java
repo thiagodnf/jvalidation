@@ -1,8 +1,26 @@
 package org.jvalidation.matcher;
 
-public interface Matcher<T extends Object> {
+public abstract class Matcher {
 
-	public boolean execute(T target);
+	protected boolean isNot = false;
 
-	public String getMessage();
+	protected void throwException(String message) {
+
+		if (isNot) {
+			message = message.replace("%s", "not");
+		} else {
+			message = message.replace("%s", "");
+		}
+
+		throw new IllegalArgumentException(message);
+	}
+	
+	protected boolean validate(boolean exp) {
+		return isNot ? exp : !exp;
+	}
+	
+	public Matcher not() {
+		this.isNot = true;
+		return this;
+	}
 }
