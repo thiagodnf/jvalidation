@@ -12,37 +12,37 @@ public class ObjectMatcher extends Matcher{
 
 	public ObjectMatcher nullValue() {
 
-		if (validate(target == null)) {
-			throw getException("The object should be null");
+		if (target == null) {
+			return this;
 		}
 
-		return this;
+		throw getException("The variable should be null");
 	}
 
 	public ObjectMatcher notNullValue() {
 
-		if (validate(target != null)) {
-			throw getException("The object should not be null");
+		if (target != null) {
+			return this;
 		}
 
-		return this;
+		throw getException("The variable should not be null");
 	}
 
 	public ObjectMatcher instanceOf(Class<?> cls) {
 
-		if (validate(cls.isInstance(target))) {
-			throw getException("The object should be instance of " + cls);
+		if (cls.isInstance(target)) {
+			return this;
 		}
 
-		return this;
+		throw getException("The variable should be instance of " + cls);
 	}
 	
 	public ObjectMatcher notInstanceOf(Class<?> cls) {
 
-		if (validate(!cls.isInstance(target))) {
-			throw getException("The object should not be instance of " + cls);
+		if (!cls.isInstance(target)) {
+			return this;
 		}
 
-		return this;
+		throw getException("The variable should not be instance of " + cls);
 	}
 }
