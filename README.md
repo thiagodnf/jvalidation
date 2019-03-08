@@ -5,6 +5,8 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 ## Status
 [![Build Status](https://travis-ci.org/jvalidation/jvalidation.svg?branch=master)](https://travis-ci.org/jvalidation/jvalidation)
 [![codecov](https://codecov.io/gh/jvalidation/jvalidation/branch/master/graph/badge.svg)](https://codecov.io/gh/jvalidation/jvalidation)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ## Design by Contract
 
