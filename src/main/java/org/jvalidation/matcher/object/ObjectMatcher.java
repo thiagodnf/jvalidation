@@ -16,7 +16,7 @@ public class ObjectMatcher extends Matcher{
 			return this;
 		}
 
-		throw getException("The variable should be null");
+		throw getException("Expected null value");
 	}
 
 	public ObjectMatcher notNullValue() {
@@ -25,7 +25,7 @@ public class ObjectMatcher extends Matcher{
 			return this;
 		}
 
-		throw getException("The variable should not be null");
+		throw getException("Expected not null value");
 	}
 
 	public ObjectMatcher instanceOf(Class<?> cls) {
@@ -34,7 +34,7 @@ public class ObjectMatcher extends Matcher{
 			return this;
 		}
 
-		throw getException("The variable should be instance of " + cls);
+		throw getException("Expected an instance of %s but it was %s", cls.getClass().getSimpleName(), target.getClass().getSimpleName());
 	}
 	
 	public ObjectMatcher notInstanceOf(Class<?> cls) {
@@ -43,6 +43,6 @@ public class ObjectMatcher extends Matcher{
 			return this;
 		}
 
-		throw getException("The variable should not be instance of " + cls);
+		throw getException("Expected not an instance of %s but it was %s", cls.getClass().getSimpleName(), target.getClass().getSimpleName());
 	}
 }

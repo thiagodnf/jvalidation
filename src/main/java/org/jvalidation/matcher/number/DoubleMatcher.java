@@ -16,7 +16,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be equal to '" + value + "'");
+		throw getException("Expected a value equal to %s but it was %s", value, target);
 	}
 
 	public DoubleMatcher greaterThan(double min) {
@@ -25,7 +25,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be greater than '" + min + "'");
+		throw getException("Expected a value greater than to %s but it was %s", min, target);
 	}
 	
 	public DoubleMatcher greaterThanOrEqualTo(double min) {
@@ -34,7 +34,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be greater than or equal to '" + min + "'");
+		throw getException("Expected a value greater than or equal to %s but it was %s", min, target);
 	}
 	
 	public DoubleMatcher lessThan(double max) {
@@ -43,7 +43,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be less than '" + max + "'");
+		throw getException("Expected a value less than %s but it was %s", max, target);
 	}
 	
 	public DoubleMatcher lessThanOrEqualTo(double max) {
@@ -52,7 +52,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be less than or equal to '" + max + "'");
+		throw getException("Expected a value less than or equal to %s but it was %s", max, target);
 	}
 	
 	public DoubleMatcher between(double min, double max) {
@@ -61,7 +61,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be between " + min + " and " + max);
+		throw getException("Expected a value between %s and %s but it was %s", min, max, target);
 	}
 	
 	public DoubleMatcher positive() {
@@ -70,7 +70,7 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be positive");
+		throw getException("Expected a positive value but it was %s", target);
 	}
 	
 	public DoubleMatcher negative() {
@@ -79,6 +79,6 @@ public class DoubleMatcher extends Matcher{
 			return this;
 		}
 		
-		throw getException("The value '" + target + "' should be negative");
+		throw getException("Expected a negative value but it was %s", target);
 	}
 }

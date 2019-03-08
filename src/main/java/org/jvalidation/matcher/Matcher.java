@@ -2,7 +2,7 @@ package org.jvalidation.matcher;
 
 public abstract class Matcher {
 
-	protected IllegalArgumentException getException(String message) {
-		return new IllegalArgumentException(message);
+	protected IllegalArgumentException getException(String message, Object... args) {
+		return new IllegalArgumentException(String.format(message, args));
 	}
 }
