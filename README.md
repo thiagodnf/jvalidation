@@ -14,6 +14,9 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 
 Feel free to fork this project, work on it and then make a pull request.
 
+## Questions or Suggestions
+
+Feel free to create <a href="https://github.com/jvalidation/jvalidation/issues">issues</a> here as you need
 
 ## License
 
