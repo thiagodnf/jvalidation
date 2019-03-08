@@ -12,31 +12,31 @@ public class IntegerMatcher extends Matcher{
 	
 	public void equalTo(int value) {
 		if (validate(target == value)) {
-			throw getException("The value '" + target + "' should be equal to '" + value + "'");
+			throw getException("The value '" + target + "' should %s be equal to '" + value + "'");
 		}
 	}
 
 	public void greaterThan(int min) {
 		if (validate(target > min)) {
-			throw getException("The value '" + target + "' should be greater than '" + min + "'");
+			throw getException("The value '" + target + "' should %s be greater than '" + min + "'");
 		}
 	}
 	
 	public void greaterThanOrEqualTo(int min) {
 		if (validate(target >= min)) {
-			throw getException("The value '" + target + "' should be greater than or equal to '" + min + "'");
+			throw getException("The value '" + target + "' should %s be greater than or equal to '" + min + "'");
 		}
 	}
 	
 	public void lessThan(int max) {
 		if (validate(target < max)) {
-			throw getException("The value '" + target + "' should be less than '" + max + "'");
+			throw getException("The value '" + target + "' should %s be less than '" + max + "'");
 		}
 	}
 	
 	public void lessThanOrEqualTo(int max) {
 		if (validate(target <= max)) {
-			throw getException("The value '" + target + "' should be less than or equal to '" + max + "'");
+			throw getException("The value '" + target + "' should %s be less than or equal to '" + max + "'");
 		}
 	}
 	
