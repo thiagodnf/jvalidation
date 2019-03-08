@@ -10,6 +10,29 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 
 ## Design by Contract
 
+## How to use
+
+This project uses GitHub as a Maven Repository. Then you have just add the following section to your repositories tag in pom.xml
+
+```xml
+<repositories>
+    <repository>
+        <id>jvalidation-github</id>
+        <url>https://github.com/jvalidation/mvn-repo/raw/master/releases</url>
+    </repository>
+</repositories>
+```
+
+Then add a dependency into tag of your pom.xml
+
+```xml
+<dependency>
+    <groupId>org.jvalidation</groupId>
+    <artifactId>jvalidation</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Contributions
 
 Feel free to fork this project, work on it and then make a pull request.
