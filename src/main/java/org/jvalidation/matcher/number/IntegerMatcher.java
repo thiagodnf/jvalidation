@@ -41,8 +41,9 @@ public class IntegerMatcher extends Matcher{
 	}
 	
 	public void between(int min, int max) {
-		this.greaterThanOrEqualTo(min);
-		this.lessThanOrEqualTo(max);
+		if (validate(target >= min && target <= max)) {
+			throwException("The value '" + target + "' should %s be between " + min + " and " + max);
+		}
 	}
 	
 	public void even() {

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.jvalidation.Assertive.require;
 
 import org.junit.jupiter.api.Test;
+import org.jvalidation.matcher.number.IntegerMatcher;
 
 public class IntegerMatcherTest {
 	
@@ -49,7 +50,14 @@ public class IntegerMatcherTest {
 			require(3).isInteger().negative();
 		});
 		assertThrows(IllegalArgumentException.class, () -> {
+			require(-3).isInteger().not().negative();
+		});
+		
+		assertThrows(IllegalArgumentException.class, () -> {
 			require(-2).isInteger().positive();
+		});
+		assertThrows(IllegalArgumentException.class, () -> {
+			new IntegerMatcher(2).not().positive();
 		});
 	}
 	
