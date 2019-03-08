@@ -181,4 +181,20 @@ public class IntegerMatcherTest {
 			new IntegerMatcher(1).positive();
 		});
 	});
+	
+	describe("when call multiple conditions at the same time", () -> {
+	
+		describe("with even() and greaterThan()", () -> {
+			
+			it("should throw an exception", () -> {
+				expect(() -> { new IntegerMatcher(8).even().greaterThan(10);}).toThrow(IllegalArgumentException.class);
+				expect(() -> { new IntegerMatcher(6).even().greaterThan(10);}).toThrow(IllegalArgumentException.class);
+			});
+			
+			it("should not throw an exception", () -> {
+				new IntegerMatcher(12).even().greaterThan(10);
+				new IntegerMatcher(14).even().greaterThan(10);
+			});
+		});
+	});
 }}

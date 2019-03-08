@@ -7,6 +7,7 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
 
 import org.junit.runner.RunWith;
 import org.jvalidation.matcher.number.DoubleMatcher;
+import org.jvalidation.matcher.number.IntegerMatcher;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
 
@@ -145,6 +146,22 @@ public class DoubleMatcherTest {
 		it("should not throw an exception", () -> {
 			new DoubleMatcher(0).positive();
 			new DoubleMatcher(1).positive();
+		});
+	});
+	
+	describe("when call multiple conditions at the same time", () -> {
+		
+		describe("with positive() and greaterThan()", () -> {
+			
+			it("should throw an exception", () -> {
+				expect(() -> { new IntegerMatcher(-1).positive().greaterThan(10);}).toThrow(IllegalArgumentException.class);
+				expect(() -> { new IntegerMatcher(8).positive().greaterThan(10);}).toThrow(IllegalArgumentException.class);
+			});
+			
+			it("should not throw an exception", () -> {
+				new IntegerMatcher(12).positive().greaterThan(10);
+				new IntegerMatcher(14).positive().greaterThan(10);
+			});
 		});
 	});
 }}

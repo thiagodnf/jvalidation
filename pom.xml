@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.jvalidation</groupId>
 	<artifactId>jvalidation</artifactId>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 	<name>jvalidation</name>
 	<packaging>jar</packaging>
 	<description>A simple, fast and light-weight validation tool to express pre- and post-conditions in your code</description>
