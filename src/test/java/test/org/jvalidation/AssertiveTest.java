@@ -15,6 +15,9 @@ public class AssertiveTest {
 			new Assertive(2.0).isInteger();
 		});
 		assertThrows(IllegalArgumentException.class, () -> {
+			new Assertive(2).isDouble();
+		});
+		assertThrows(IllegalArgumentException.class, () -> {
 			new Assertive("It is not a integer").isInteger();
 		});
 	}
@@ -23,5 +26,6 @@ public class AssertiveTest {
 	public void shouldReturnANotNullObject() {
 		assertNotNull(new Assertive(2).isInteger());
 		assertNotNull(new Assertive(null).isObject());
+		assertNotNull(new Assertive(2.0).isDouble());
 	}
 }

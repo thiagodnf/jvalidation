@@ -1,5 +1,6 @@
 package org.jvalidation;
 
+import org.jvalidation.matcher.number.DoubleMatcher;
 import org.jvalidation.matcher.number.IntegerMatcher;
 import org.jvalidation.matcher.object.ObjectMatcher;
 
@@ -22,6 +23,15 @@ public class Assertive {
 		}
 
 		return new IntegerMatcher((int) object);
+	}
+	
+	public DoubleMatcher isDouble() {
+
+		if (!(object instanceof Double)) {
+			throw new IllegalArgumentException("The value is not a double");
+		}
+
+		return new DoubleMatcher((double) object);
 	}
 	
 	public ObjectMatcher isObject() {
