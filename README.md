@@ -1,4 +1,4 @@
-# JValidation
+<img src="https://raw.githubusercontent.com/jvalidation/jvalidation/master/src/main/resources/logo-full.png" width="500px"/>
 
 A simple, fast and light-weight validation tool to express pre- and post-conditions in your code
 
