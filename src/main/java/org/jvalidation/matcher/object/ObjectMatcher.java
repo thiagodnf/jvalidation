@@ -1,6 +1,8 @@
 package org.jvalidation.matcher.object;
 
-public class ObjectMatcher {
+import org.jvalidation.matcher.Matcher;
+
+public class ObjectMatcher extends Matcher{
 
 	protected Object target;
 
@@ -9,16 +11,13 @@ public class ObjectMatcher {
 	}
 
 	public void nullValue() {
-
-		if (!(target == null)) {
-			throw new IllegalArgumentException("The object is not null");
+		if (validate(target == null)) {
+			throw getException("The object should %s be null");
 		}
 	}
 	
-	public void notNullValue() {
-
-		if (!(target != null)) {
-			throw new IllegalArgumentException("The object is null");
-		}
+	public ObjectMatcher not() {
+		this.isNot = true;
+		return this;
 	}
 }

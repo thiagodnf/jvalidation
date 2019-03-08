@@ -4,7 +4,7 @@ public abstract class Matcher {
 
 	protected boolean isNot = false;
 
-	protected void throwException(String message) {
+	protected IllegalArgumentException getException(String message) {
 
 		if (isNot) {
 			message = message.replace("%s", "not");
@@ -12,15 +12,10 @@ public abstract class Matcher {
 			message = message.replace("%s", "");
 		}
 
-		throw new IllegalArgumentException(message);
+		return new IllegalArgumentException(message);
 	}
 	
 	protected boolean validate(boolean exp) {
 		return isNot ? exp : !exp;
-	}
-	
-	public Matcher not() {
-		this.isNot = true;
-		return this;
 	}
 }

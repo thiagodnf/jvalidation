@@ -12,7 +12,10 @@ public class IntegerMatcherTest {
 	public void shouldThrowAnException() {
 
 		assertThrows(IllegalArgumentException.class, () -> {
-			require(11).isInteger().equalTo(10);
+			new IntegerMatcher(2).equalTo(10);
+		});
+		assertThrows(IllegalArgumentException.class, () -> {
+			new IntegerMatcher(12).equalTo(10);
 		});
 		
 		assertThrows(IllegalArgumentException.class, () -> {
