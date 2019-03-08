@@ -10,68 +10,93 @@ public class IntegerMatcher extends Matcher{
 		this.target = target;
 	}
 	
-	public void equalTo(int value) {
+	public IntegerMatcher equalTo(int value) {
+		
 		if (validate(target == value)) {
 			throw getException("The value '" + target + "' should %s be equal to '" + value + "'");
 		}
+		
+		return this;
 	}
 
-	public void greaterThan(int min) {
+	public IntegerMatcher greaterThan(int min) {
+		
 		if (validate(target > min)) {
 			throw getException("The value '" + target + "' should %s be greater than '" + min + "'");
 		}
+		
+		return this;
 	}
 	
-	public void greaterThanOrEqualTo(int min) {
+	public IntegerMatcher greaterThanOrEqualTo(int min) {
+		
 		if (validate(target >= min)) {
 			throw getException("The value '" + target + "' should %s be greater than or equal to '" + min + "'");
 		}
+		
+		return this;
 	}
 	
-	public void lessThan(int max) {
+	public IntegerMatcher lessThan(int max) {
+		
 		if (validate(target < max)) {
 			throw getException("The value '" + target + "' should %s be less than '" + max + "'");
 		}
+		
+		return this;
 	}
 	
-	public void lessThanOrEqualTo(int max) {
+	public IntegerMatcher lessThanOrEqualTo(int max) {
+		
 		if (validate(target <= max)) {
 			throw getException("The value '" + target + "' should %s be less than or equal to '" + max + "'");
 		}
+		
+		return this;
 	}
 	
-	public void between(int min, int max) {
+	public IntegerMatcher between(int min, int max) {
+		
 		if (validate(target >= min && target <= max)) {
 			throw getException("The value '" + target + "' should %s be between " + min + " and " + max);
 		}
+		
+		return this;
 	}
 	
-	public void even() {
+	public IntegerMatcher even() {
+		
 		if (validate(target % 2 == 0)) {
 			throw getException("The value '" + target + "' should %s be even");
 		}
+		
+		return this;
 	}
 
-	public void odd() {
+	public IntegerMatcher odd() {
+		
 		if (validate(target % 2 != 0)) {
 			throw getException("The value '" + target + "' should %s be odd");
 		}
+		
+		return this;
 	}
 	
-	public void positive() {
+	public IntegerMatcher positive() {
+		
 		if (validate(target >= 0)) {
 			throw getException("The value '" + target + "' should %s be positive");
 		}
+		
+		return this;
 	}
 	
-	public void negative() {
+	public IntegerMatcher negative() {
+		
 		if (validate(target < 0)) {
 			throw getException("The value '" + target + "' should %s be negative");
 		}
-	}
-	
-	public IntegerMatcher not() {
-		this.isNot = true;
+		
 		return this;
 	}
 }

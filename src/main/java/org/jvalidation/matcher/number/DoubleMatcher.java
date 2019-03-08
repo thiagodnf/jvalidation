@@ -10,56 +10,75 @@ public class DoubleMatcher extends Matcher{
 		this.target = target;
 	}
 	
-	public void equalTo(double value) {
+	public DoubleMatcher equalTo(double value) {
+		
 		if (validate(target == value)) {
 			throw getException("The value '" + target + "' should %s be equal to '" + value + "'");
 		}
+		
+		return this;
 	}
 
-	public void greaterThan(double min) {
+	public DoubleMatcher greaterThan(double min) {
+		
 		if (validate(target > min)) {
 			throw getException("The value '" + target + "' should %s be greater than '" + min + "'");
 		}
+		
+		return this;
 	}
 	
-	public void greaterThanOrEqualTo(double min) {
+	public DoubleMatcher greaterThanOrEqualTo(double min) {
+		
 		if (validate(target >= min)) {
 			throw getException("The value '" + target + "' should %s be greater than or equal to '" + min + "'");
 		}
+		
+		return this;
 	}
 	
-	public void lessThan(double max) {
+	public DoubleMatcher lessThan(double max) {
+		
 		if (validate(target < max)) {
 			throw getException("The value '" + target + "' should %s be less than '" + max + "'");
 		}
+		
+		return this;
 	}
 	
-	public void lessThanOrEqualTo(double max) {
+	public DoubleMatcher lessThanOrEqualTo(double max) {
+		
 		if (validate(target <= max)) {
 			throw getException("The value '" + target + "' should %s be less than or equal to '" + max + "'");
 		}
+		
+		return this;
 	}
 	
-	public void between(double min, double max) {
+	public DoubleMatcher between(double min, double max) {
+		
 		if (validate(target >= min && target <= max)) {
 			throw getException("The value '" + target + "' should %s be between " + min + " and " + max);
 		}
+		
+		return this;
 	}
 	
-	public void positive() {
+	public DoubleMatcher positive() {
+		
 		if (validate(target >= 0)) {
 			throw getException("The value '" + target + "' should %s be positive");
 		}
+		
+		return this;
 	}
 	
-	public void negative() {
+	public DoubleMatcher negative() {
+		
 		if (validate(target < 0)) {
 			throw getException("The value '" + target + "' should %s be negative");
 		}
-	}
-	
-	public DoubleMatcher not() {
-		this.isNot = true;
+		
 		return this;
 	}
 }

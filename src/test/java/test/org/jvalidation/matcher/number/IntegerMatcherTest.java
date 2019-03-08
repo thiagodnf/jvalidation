@@ -52,15 +52,9 @@ public class IntegerMatcherTest {
 		assertThrows(IllegalArgumentException.class, () -> {
 			require(3).isInteger().negative();
 		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(-3).isInteger().not().negative();
-		});
 		
 		assertThrows(IllegalArgumentException.class, () -> {
 			require(-2).isInteger().positive();
-		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			new IntegerMatcher(2).not().positive();
 		});
 	}
 	
@@ -84,23 +78,14 @@ public class IntegerMatcherTest {
 		
 		require(2).isInteger().even();
 		require(4).isInteger().even();
-		require(1).isInteger().not().even();
-		require(3).isInteger().not().even();
 		
 		require(1).isInteger().odd();
 		require(3).isInteger().odd();
-		require(2).isInteger().not().odd();
-		require(4).isInteger().not().odd();
 		
 		require(0).isInteger().positive();
 		require(1).isInteger().positive();
-		require(-1).isInteger().not().positive();
-		require(-10).isInteger().not().positive();
 		
 		require(-1).isInteger().negative();
-		require(-10).isInteger().negative();
-		require(1).isInteger().not().negative();
-		require(0).isInteger().not().negative();
-		
+		require(-2).isInteger().negative();
 	}
 }

@@ -45,15 +45,9 @@ public class DoubleMatcherTest {
 		assertThrows(IllegalArgumentException.class, () -> {
 			require(3.0).isDouble().negative();
 		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(-3.0).isDouble().not().negative();
-		});
 		
 		assertThrows(IllegalArgumentException.class, () -> {
 			require(-2.0).isDouble().positive();
-		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			new DoubleMatcher(2.0).not().positive();
 		});
 	}
 	
@@ -77,13 +71,9 @@ public class DoubleMatcherTest {
 		
 		require(0.0).isDouble().positive();
 		require(1.0).isDouble().positive();
-		require(-1.0).isDouble().not().positive();
-		require(-10.0).isDouble().not().positive();
 		
 		require(-1.0).isDouble().negative();
 		require(-10.0).isDouble().negative();
-		require(1.0).isDouble().not().negative();
-		require(0.0).isDouble().not().negative();
 		
 	}
 }
