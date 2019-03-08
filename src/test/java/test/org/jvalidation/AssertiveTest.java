@@ -1,31 +1,83 @@
 package test.org.jvalidation;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static com.mscharhag.oleaster.matcher.Matchers.expect;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.describe;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.beforeEach;
 
-import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.jvalidation.Assertive;
+import static org.jvalidation.Assertive.require;
+import static org.jvalidation.Assertive.ensure;
 
+import com.mscharhag.oleaster.runner.OleasterRunner;
+
+@RunWith(OleasterRunner.class)
 public class AssertiveTest {
 	
-	@Test
-	public void shouldThrowAnException() {
-
-		assertThrows(IllegalArgumentException.class, () -> {
-			new Assertive(2.0).isInteger();
-		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			new Assertive(2).isDouble();
-		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			new Assertive("It is not a integer").isInteger();
-		});
-	}
+	private Assertive assertive;
 	
-	@Test
-	public void shouldReturnANotNullObject() {
-		assertNotNull(new Assertive(2).isInteger());
-		assertNotNull(new Assertive(null).isObject());
-		assertNotNull(new Assertive(2.0).isDouble());
-	}
-}
+{
+	describe("when call require()", () -> {
+		
+		it("should return no null object with isObject()", () -> {
+			expect(require(null)).toBeNotNull();
+		});
+	});
+	
+	describe("when call ensure()", () -> {
+		
+		it("should return no null object with isObject()", () -> {
+			expect(ensure(null)).toBeNotNull();
+		});
+	});
+	
+	describe("when null as passed as input", () -> {
+		
+		beforeEach(() -> {
+			assertive = new Assertive(null);
+		});
+		
+		it("should throw an exception with isInteger()", () -> {
+			expect(() -> { assertive.isInteger();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception with isDouble()", () -> {
+			expect(() -> { assertive.isDouble();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should return no null object with isObject()", () -> {
+			expect(assertive.isObject()).toBeNotNull();
+		});
+	});
+	
+	describe("when an integer as passed as input", () -> {
+		
+		beforeEach(() -> {
+			assertive = new Assertive(2);
+		});
+		
+		it("should return no null object when", () -> {
+			expect(assertive.isInteger()).toBeNotNull();
+		});
+		
+		it("should throw an exception with isDouble()", () -> {
+			expect(() -> { assertive.isDouble();}).toThrow(IllegalArgumentException.class);
+		});
+	});
+		
+	describe("when an double as passed as input", () -> {
+		
+		beforeEach(() -> {
+			assertive = new Assertive(2.2);
+		});
+		
+		it("should return no null object when", () -> {
+			expect(assertive.isDouble()).toBeNotNull();
+		});
+		
+		it("should throw an exception with isDouble()", () -> {
+			expect(() -> { assertive.isInteger();}).toThrow(IllegalArgumentException.class);
+		});
+	});
+}}

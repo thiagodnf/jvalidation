@@ -1,79 +1,150 @@
 package test.org.jvalidation.matcher.number;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.jvalidation.Assertive.require;
+import static com.mscharhag.oleaster.matcher.Matchers.expect;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.beforeEach;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.describe;
+import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
 
-import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.jvalidation.matcher.number.DoubleMatcher;
 
-public class DoubleMatcherTest {
-	
-	@Test
-	public void shouldThrowAnException() {
+import com.mscharhag.oleaster.runner.OleasterRunner;
 
-		assertThrows(IllegalArgumentException.class, () -> {
-			new DoubleMatcher(2.0).equalTo(10);
-		});
-		assertThrows(IllegalArgumentException.class, () -> {
-			new DoubleMatcher(12.0).equalTo(10);
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(2.0).isDouble().greaterThan(10);		
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(2.0).isDouble().greaterThanOrEqualTo(10);		
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(10.0).isDouble().lessThan(2);		
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(10.0).isDouble().lessThanOrEqualTo(2);		
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(9.0).isDouble().between(10, 20);
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(21.0).isDouble().between(10, 20);
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(3.0).isDouble().negative();
-		});
-		
-		assertThrows(IllegalArgumentException.class, () -> {
-			require(-2.0).isDouble().positive();
-		});
-	}
+@RunWith(OleasterRunner.class)
+public class DoubleMatcherTest {
+
+	private DoubleMatcher matcher;
 	
-	@Test
-	public void shouldNotThrowAnException() {
+{
+
+	describe("when call equalTo()", () -> {
 		
-		require(10.0).isDouble().equalTo(10);
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(0);
+		});
 		
-		require(11.0).isDouble().greaterThan(10);
-		require(11.0).isDouble().greaterThanOrEqualTo(11);
-		require(12.0).isDouble().greaterThanOrEqualTo(11);
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.equalTo(1);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.equalTo(-1);}).toThrow(IllegalArgumentException.class);
+		});
 		
-		require(2.0).isDouble().lessThan(10);
-		require(2.0).isDouble().lessThanOrEqualTo(2);
-		require(1.0).isDouble().lessThanOrEqualTo(2);
+		it("should not throw an exception", () -> {
+			matcher.equalTo(0);
+		});
+	});
+	
+	describe("when call greaterThan()", () -> {
 		
-		require(10.0).isDouble().between(10, 20);
-		require(11.0).isDouble().between(10, 20);
-		require(19.0).isDouble().between(10, 20);
-		require(20.0).isDouble().between(10, 20);
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(10);
+		});
 		
-		require(0.0).isDouble().positive();
-		require(1.0).isDouble().positive();
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.greaterThan(10);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.greaterThan(20);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.greaterThan(30);}).toThrow(IllegalArgumentException.class);
+		});
 		
-		require(-1.0).isDouble().negative();
-		require(-10.0).isDouble().negative();
+		it("should not throw an exception", () -> {
+			matcher.greaterThan(0);
+			matcher.greaterThan(9);
+		});
+	});
+	
+	describe("when call greaterThanOrEqualTo()", () -> {
 		
-	}
-}
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(10);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.greaterThanOrEqualTo(11);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.greaterThanOrEqualTo(20);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.greaterThanOrEqualTo(30);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			matcher.greaterThanOrEqualTo(0);
+			matcher.greaterThanOrEqualTo(9);
+			matcher.greaterThanOrEqualTo(10);
+		});
+	});
+	
+	describe("when call lessThan()", () -> {
+		
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(10);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.lessThan(10);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.lessThan(9);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			matcher.lessThan(11);
+		});
+	});
+	
+	describe("when call lessThanOrEqualTo()", () -> {
+		
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(10);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.lessThanOrEqualTo(8);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.lessThanOrEqualTo(9);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			matcher.lessThanOrEqualTo(10);
+			matcher.lessThanOrEqualTo(11);
+			matcher.lessThanOrEqualTo(12);
+		});
+	});
+	
+	describe("when call between()", () -> {
+		
+		beforeEach(() -> {
+			matcher = new DoubleMatcher(9);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { matcher.between(1 , 8);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { matcher.between(10, 12);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			matcher.between(8,20);
+			matcher.between(9,20);
+			matcher.between(1,9);
+		});
+	});
+	
+	describe("when call negative()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new DoubleMatcher(0).negative();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new DoubleMatcher(1).negative();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new DoubleMatcher(-1).negative();
+			new DoubleMatcher(-2).negative();
+		});
+	});
+	
+	describe("when call positive()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new DoubleMatcher(-1).positive();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new DoubleMatcher(-2).positive();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new DoubleMatcher(0).positive();
+			new DoubleMatcher(1).positive();
+		});
+	});
+}}

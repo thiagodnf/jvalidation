@@ -10,14 +10,39 @@ public class ObjectMatcher extends Matcher{
 		this.target = target;
 	}
 
-	public void nullValue() {
+	public ObjectMatcher nullValue() {
+
 		if (validate(target == null)) {
-			throw getException("The object should %s be null");
+			throw getException("The object should be null");
 		}
+
+		return this;
+	}
+
+	public ObjectMatcher notNullValue() {
+
+		if (validate(target != null)) {
+			throw getException("The object should not be null");
+		}
+
+		return this;
+	}
+
+	public ObjectMatcher instanceOf(Class<?> cls) {
+
+		if (validate(cls.isInstance(target))) {
+			throw getException("The object should be instance of " + cls);
+		}
+
+		return this;
 	}
 	
-	public ObjectMatcher not() {
-		this.isNot = true;
+	public ObjectMatcher notInstanceOf(Class<?> cls) {
+
+		if (validate(!cls.isInstance(target))) {
+			throw getException("The object should not be instance of " + cls);
+		}
+
 		return this;
 	}
 }

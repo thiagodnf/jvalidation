@@ -15,6 +15,10 @@ public class Assertive {
 	public static Assertive require(Object object) {
 		return new Assertive(object);
 	}
+	
+	public static Assertive ensure(Object object) {
+		return new Assertive(object);
+	}
 
 	public IntegerMatcher isInteger() {
 

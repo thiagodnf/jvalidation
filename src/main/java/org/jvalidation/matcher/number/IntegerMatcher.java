@@ -66,7 +66,7 @@ public class IntegerMatcher extends Matcher{
 	
 	public IntegerMatcher even() {
 		
-		if (validate(target % 2 == 0)) {
+		if (validate(target >= 0 && target % 2 == 0)) {
 			throw getException("The value '" + target + "' should %s be even");
 		}
 		
@@ -75,7 +75,7 @@ public class IntegerMatcher extends Matcher{
 
 	public IntegerMatcher odd() {
 		
-		if (validate(target % 2 != 0)) {
+		if (validate(target >= 0 && target % 2 != 0)) {
 			throw getException("The value '" + target + "' should %s be odd");
 		}
 		
