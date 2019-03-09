@@ -8,9 +8,30 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-## Design by Contract
+## Examples
+
+You have to statically import the library entry point:
+
+```java
+import static org.jvalidation.Assertive.*
+```
+Use assertive preconditions to check for programming errors in calling clients:
+
+```java
+require(i).isInteger().greaterThan(2);
+```
+
+Use assertive postconditions to check for programming errors in your supplied code:
+
+```java
+ensure(i).isString().notNull();
+```
 
 ## How to use
+
+Statically import the library entry point:
+
+## How to install
 
 This project uses GitHub as a Maven Repository. Then you have just add the following section to your repositories tag in pom.xml
 
