@@ -71,6 +71,15 @@ public int myMethod(String s, int j) {
 }
 ```
 
+## Matcher
+
+This project uses the concept of matchers in which each one is responsible for validating a specific object. Each one has its own validation method. The available matchers (you can click to see the available methods) are shown as follows:
+
+ - ObjectMatcher
+ - IntegerMatcher
+ - DoubleMatcher
+ - StringMatcher
+ 
 ## Contributions
 
 Feel free to fork this project, work on it and then make a pull request.
