@@ -81,4 +81,15 @@ public class DoubleMatcher extends Matcher{
 		
 		throw getException("Expected a negative value but it was %s", target);
 	}
+	
+	public DoubleMatcher closeTo(double other, double delta) {
+
+		double distance = Math.abs(target - other);
+System.out.println(distance);
+		if (distance <= delta) {
+			return this;
+		}
+
+		throw getException("Expected to be closed to %s with delta %s but it was %s", other, delta, target);
+	}
 }

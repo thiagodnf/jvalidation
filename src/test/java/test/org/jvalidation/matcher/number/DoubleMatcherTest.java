@@ -149,6 +149,25 @@ public class DoubleMatcherTest {
 		});
 	});
 	
+	describe("when call closeTo()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new DoubleMatcher(10).closeTo(9.6,0.2);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception with positive values", () -> {
+			new DoubleMatcher(10).closeTo(9.8, 0.21);
+			new DoubleMatcher(9.6).closeTo(9.8, 0.21);
+			new DoubleMatcher(10).closeTo(10.2, 0.21);
+			new DoubleMatcher(10).closeTo(10, 0.21);
+		});
+		
+		it("should not throw an exception with negatives values", () -> {
+			new DoubleMatcher(-10).closeTo(-9.8, 0.21);
+			new DoubleMatcher(-9.6).closeTo(-9.8, 0.2);
+		});
+	});
+	
 	describe("when call multiple conditions at the same time", () -> {
 		
 		describe("with positive() and greaterThan()", () -> {
