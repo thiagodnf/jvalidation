@@ -100,5 +100,12 @@ public class AssertiveTest {
 			expect(new Assertive('a').isChar()).toBeNotNull();
 		});
 	});
+	
+	describe("when use the invalid inputs", () -> {
+
+		it("should throw an exception with isDouble()", () -> {
+			expect(() -> { new Assertive("a").isChar();}).toThrow(IllegalArgumentException.class);
+		});
+	});
 		
 }}
