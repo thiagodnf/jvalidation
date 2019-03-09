@@ -53,8 +53,19 @@ ensure(i).isString().notNull();
 ## Example
 
 Statically import the library entry point:
+```java
+public int myMethod(String s, int j) {
+				
+    require(s).isString().notNull(2);
+    require(j).isInteger().greaterThanOrEqualTo(2);
 
-
+    // your code here
+    
+    ensure(s).isString().size(2);
+    
+    return j;
+}
+```
 
 ## Contributions
 
