@@ -75,4 +75,21 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call matches()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).matches("(abc)*");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("adbcd").matches("(abc)*");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("").matches("(abc)*");
+			new StringMatcher("abc").matches("(abc)*");
+			new StringMatcher("abcabc").matches("(abc)*");
+		});
+	});
+	
 }}

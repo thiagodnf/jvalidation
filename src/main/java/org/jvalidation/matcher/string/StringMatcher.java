@@ -1,5 +1,7 @@
 package org.jvalidation.matcher.string;
 
+import java.util.regex.Pattern;
+
 import org.jvalidation.matcher.object.ObjectMatcher;
 
 public class StringMatcher extends ObjectMatcher{
@@ -56,4 +58,18 @@ public class StringMatcher extends ObjectMatcher{
 		throw getException("Expected string ends with but it was %s", target);
 	}
 	
+	public StringMatcher matches(Pattern pattern) {
+
+		notNull();
+		
+		if (pattern.matcher(target).matches()) {
+			return this;
+		}
+
+		throw getException("Expected string matches with %s but it was %s", pattern.pattern(), target);
+	}
+	
+	public StringMatcher matches(String pattern) {
+		return matches(Pattern.compile(pattern));
+	}
 }
