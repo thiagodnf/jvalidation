@@ -76,6 +76,22 @@ public int myMethod(String s, int j) {
 }
 ```
 
+Example of complex rule:
+
+```java
+
+import static org.jvalidation.Assertive.require
+
+public int myMethod(int i) {
+				
+    require(i).isInteger().even().greaterThanOrEqualTo(10);
+    
+    // your code here
+    
+    return 2;
+}
+```
+
 ## Matcher
 
 This project uses the concept of matchers in which each one is responsible for validating a specific object. Each one has its own validation method. The available matchers (you can click to see the available methods) are shown as follows:
