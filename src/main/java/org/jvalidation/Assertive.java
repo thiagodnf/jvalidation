@@ -3,6 +3,7 @@ package org.jvalidation;
 import org.jvalidation.matcher.number.DoubleMatcher;
 import org.jvalidation.matcher.number.IntegerMatcher;
 import org.jvalidation.matcher.object.ObjectMatcher;
+import org.jvalidation.matcher.string.StringMatcher;
 
 public class Assertive {
 	
@@ -40,5 +41,14 @@ public class Assertive {
 	
 	public ObjectMatcher isObject() {
 		return new ObjectMatcher(object);
+	}
+	
+	public StringMatcher isString() {
+
+		if (!(object instanceof String)) {
+			throw new IllegalArgumentException("The value is not a string");
+		}
+
+		return new StringMatcher((String) object);
 	}
 }

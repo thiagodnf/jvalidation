@@ -49,6 +49,10 @@ public class AssertiveTest {
 		it("should return no null object with isObject()", () -> {
 			expect(assertive.isObject()).toBeNotNull();
 		});
+		
+		it("should throw an exception with isString()", () -> {
+			expect(() -> { assertive.isString();}).toThrow(IllegalArgumentException.class);
+		});
 	});
 	
 	describe("when an integer as passed as input", () -> {
@@ -63,6 +67,10 @@ public class AssertiveTest {
 		
 		it("should throw an exception with isDouble()", () -> {
 			expect(() -> { assertive.isDouble();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception with isString()", () -> {
+			expect(() -> { assertive.isString();}).toThrow(IllegalArgumentException.class);
 		});
 	});
 		
@@ -79,5 +87,17 @@ public class AssertiveTest {
 		it("should throw an exception with isDouble()", () -> {
 			expect(() -> { assertive.isInteger();}).toThrow(IllegalArgumentException.class);
 		});
+		
+		it("should throw an exception with isString()", () -> {
+			expect(() -> { assertive.isString();}).toThrow(IllegalArgumentException.class);
+		});
 	});
+	
+	describe("when use the correct inputs", () -> {
+		
+		it("should return not null object)", () -> {
+			expect(new Assertive("abc").isString()).toBeNotNull();
+		});
+	});
+		
 }}
