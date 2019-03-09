@@ -92,4 +92,21 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call length()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).length(2);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("abc").length(4);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("ab").length(2);
+			new StringMatcher("abc").length(3);
+			new StringMatcher("").length(0);
+		});
+	});
+	
 }}

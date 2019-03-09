@@ -72,4 +72,15 @@ public class StringMatcher extends ObjectMatcher{
 	public StringMatcher matches(String pattern) {
 		return matches(Pattern.compile(pattern));
 	}
+	
+	public StringMatcher length(int length) {
+
+		notNull();
+		
+		if (target.length() == length) {
+			return this;
+		}
+
+		throw getException("Expected string with length %s but it was %s", length, target.length());
+	}
 }
