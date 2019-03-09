@@ -52,8 +52,12 @@ ensure(i).isString().notNull();
 
 ## Example
 
-Statically import the library entry point:
+This is a simple example how to use the jvalidation
+
 ```java
+
+import static org.jvalidation.Assertive.require
+
 public int myMethod(String s, int j) {
 				
     require(s).isString().notNull(2);
