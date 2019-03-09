@@ -32,7 +32,7 @@ Then add a dependency into tag of your pom.xml
 <dependency>
     <groupId>org.jvalidation</groupId>
     <artifactId>jvalidation</artifactId>
-    <version>1.0.0</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
