@@ -94,4 +94,17 @@ public class StringMatcher extends ObjectMatcher{
 
 		throw getException("Expected string with length %s but it was %s", length, target.length());
 	}
+	
+	public StringMatcher email() {
+
+		notNull();
+
+		Pattern pattern = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+
+		if (pattern.matcher(target).matches()) {
+			return this;
+		}
+
+		throw getException("Expected an email but it was %s", target);
+	}
 }

@@ -124,4 +124,29 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call email()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).email();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("").email();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("@domain.com").email();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("domain.com@").email();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("user'name@domain.co.in").email();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("user?name@domain.co.in").email();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("user@domain.com").email();
+			new StringMatcher("user@domain.co.in").email();
+			new StringMatcher("user1@domain.com").email();
+			new StringMatcher("user.name@domain.com").email();
+			new StringMatcher("user_name@domain.co.in").email();
+			new StringMatcher("user-name@domain.co.in").email();
+			new StringMatcher("user@domaincom").email();
+		});
+	});
+	
 }}
