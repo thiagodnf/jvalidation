@@ -3,6 +3,7 @@ package org.jvalidation;
 import org.jvalidation.matcher.number.DoubleMatcher;
 import org.jvalidation.matcher.number.IntegerMatcher;
 import org.jvalidation.matcher.object.ObjectMatcher;
+import org.jvalidation.matcher.string.CharMatcher;
 import org.jvalidation.matcher.string.StringMatcher;
 
 public class Assertive {
@@ -50,5 +51,14 @@ public class Assertive {
 		}
 
 		return new StringMatcher((String) object);
+	}
+	
+	public CharMatcher isChar() {
+
+		if (!(object instanceof Character)) {
+			throw new IllegalArgumentException("The value is not a char");
+		}
+
+		return new CharMatcher((char) object);
 	}
 }

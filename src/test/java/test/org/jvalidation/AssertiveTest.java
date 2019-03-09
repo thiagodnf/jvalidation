@@ -97,6 +97,7 @@ public class AssertiveTest {
 		
 		it("should return not null object)", () -> {
 			expect(new Assertive("abc").isString()).toBeNotNull();
+			expect(new Assertive('a').isChar()).toBeNotNull();
 		});
 	});
 		
