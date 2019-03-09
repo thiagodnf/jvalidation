@@ -8,7 +8,7 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-# Features
+## Features
 - Simple and Complex rules
 - More than 100 (fully tested) validators
 - Works on Java 1.8
