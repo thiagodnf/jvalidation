@@ -26,11 +26,11 @@ public class ObjectMatcherTest {{
 	describe("when call notNullValue()", () -> {
 		
 		it("should throw an exception", () -> {
-			expect(() -> { new ObjectMatcher(null).notNullValue();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new ObjectMatcher(null).notNull();}).toThrow(IllegalArgumentException.class);
 		});
 		
 		it("should not throw an exception", () -> {
-			new ObjectMatcher(2).notNullValue();
+			new ObjectMatcher(2).notNull();
 		});
 	});
 	

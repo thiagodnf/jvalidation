@@ -14,7 +14,7 @@ public class StringMatcher extends ObjectMatcher{
 
 	public StringMatcher empty() {
 
-		notNullValue();
+		notNull();
 		
 		if (target.isEmpty()) {
 			return this;
@@ -25,7 +25,7 @@ public class StringMatcher extends ObjectMatcher{
 	
 	public StringMatcher startsWith(String prefix) {
 
-		notNullValue();
+		notNull();
 		
 		if (target.startsWith(prefix)) {
 			return this;

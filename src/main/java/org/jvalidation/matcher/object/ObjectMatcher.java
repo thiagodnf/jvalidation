@@ -19,7 +19,7 @@ public class ObjectMatcher extends Matcher{
 		throw getException("Expected null value");
 	}
 
-	public ObjectMatcher notNullValue() {
+	public ObjectMatcher notNull() {
 
 		if (target != null) {
 			return this;
