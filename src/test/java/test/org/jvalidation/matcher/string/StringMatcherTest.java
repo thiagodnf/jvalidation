@@ -109,4 +109,19 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call notEmpty()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).notEmpty();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("").notEmpty();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("a").notEmpty();
+		});
+	});
+	
 }}

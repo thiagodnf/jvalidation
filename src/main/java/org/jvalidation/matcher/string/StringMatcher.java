@@ -25,6 +25,17 @@ public class StringMatcher extends ObjectMatcher{
 		throw getException("Expected an empty string but it was %s", target);
 	}
 	
+	public StringMatcher notEmpty() {
+		
+		notNull();
+		
+		if (!target.isEmpty()) {
+			return this;
+		}
+
+		throw getException("Expected a non empty string but it was %s", target);
+	}
+	
 	public StringMatcher startsWith(String prefix) {
 
 		notNull();
