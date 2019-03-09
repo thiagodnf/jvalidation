@@ -100,6 +100,7 @@ This project uses the concept of matchers in which each one is responsible for v
  - [IntegerMatcher](https://github.com/jvalidation/jvalidation/wiki/IntegerMatcher)
  - [DoubleMatcher](https://github.com/jvalidation/jvalidation/wiki/DoubleMatcher) 
  - [StringMatcher](https://github.com/jvalidation/jvalidation/wiki/StringMatcher) 
+ - [CharMatcher](https://github.com/jvalidation/jvalidation/wiki/CharMatcher) 
  
 ## Contributions
 
