@@ -75,6 +75,7 @@ public int myMethod(String s, int j) {
 
 This project uses the concept of matchers in which each one is responsible for validating a specific object. Each one has its own validation method. The available matchers (you can click to see the available methods) are shown as follows:
 
+![ObjectMatcher](https://travis-ci.org/jvalidation/jvalidation.svg?branch=master)](https://travis-ci.org/jvalidation/jvalidation)
  - ObjectMatcher
  - IntegerMatcher
  - DoubleMatcher
