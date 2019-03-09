@@ -107,4 +107,22 @@ public class StringMatcher extends ObjectMatcher{
 
 		throw getException("Expected an email but it was %s", target);
 	}
+	
+	public StringMatcher blank() {
+
+		if (target == null || target.isEmpty()) {
+			return this;
+		}
+
+		throw getException("Expected a blank string but it was %s", target);
+	}
+	
+	public StringMatcher notBlank() {
+
+		if (!(target == null || target.isEmpty())) {
+			return this;
+		}
+
+		throw getException("Expected a not blank string but it was %s", target);
+	}
 }

@@ -148,5 +148,29 @@ public class StringMatcherTest {{
 			new StringMatcher("user@domaincom").email();
 		});
 	});
+
+	describe("when call blank()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("a").blank();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("").blank();
+			new StringMatcher(null).blank();
+		});
+	});
+	
+	describe("when call notBlank()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("").notBlank();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher(null).notBlank();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("a").notBlank();
+		});
+	});
 	
 }}
