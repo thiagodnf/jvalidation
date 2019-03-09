@@ -164,7 +164,7 @@ public class DoubleMatcherTest {
 		
 		it("should not throw an exception with negatives values", () -> {
 			new DoubleMatcher(-10).closeTo(-9.8, 0.21);
-			new DoubleMatcher(-9.6).closeTo(-9.8, 0.2);
+			new DoubleMatcher(-9.6).closeTo(-9.8, 0.21);
 		});
 	});
 	

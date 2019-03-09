@@ -85,7 +85,7 @@ public class DoubleMatcher extends Matcher{
 	public DoubleMatcher closeTo(double other, double delta) {
 
 		double distance = Math.abs(target - other);
-System.out.println(distance);
+
 		if (distance <= delta) {
 			return this;
 		}
