@@ -92,7 +92,7 @@ public int myMethod(int i) {
 }
 ```
 
-## Matcher
+## Matchers
 
 This project uses the concept of matchers in which each one is responsible for validating a specific object. Each one has its own validation method. The available matchers (you can click to see the available methods) are shown as follows:
 
