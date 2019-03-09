@@ -92,4 +92,22 @@ public class DoubleMatcher extends Matcher{
 
 		throw getException("Expected to be closed to %s with delta %s but it was %s", other, delta, target);
 	}
+	
+	public DoubleMatcher infinite() {
+		
+		if (Double.isInfinite(target)) {
+			return this;
+		}
+		
+		throw getException("Expected a infinite value but it was %s", target);
+	}
+	
+	public DoubleMatcher notInfinite() {
+		
+		if (!Double.isInfinite(target)) {
+			return this;
+		}
+		
+		throw getException("Expected a non infinite value but it was %s", target);
+	}
 }

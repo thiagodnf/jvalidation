@@ -183,4 +183,30 @@ public class DoubleMatcherTest {
 			});
 		});
 	});
+	
+	describe("when call infinite()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new DoubleMatcher(0).infinite();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new DoubleMatcher(1).infinite();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new DoubleMatcher(Double.POSITIVE_INFINITY).infinite();
+			new DoubleMatcher(Double.NEGATIVE_INFINITY).infinite();
+		});
+	});
+	
+	describe("when call notInfinite()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new DoubleMatcher(Double.POSITIVE_INFINITY).notInfinite();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new DoubleMatcher(Double.NEGATIVE_INFINITY).notInfinite();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new DoubleMatcher(0).notInfinite();
+			new DoubleMatcher(1).notInfinite();
+		});
+	});
 }}
