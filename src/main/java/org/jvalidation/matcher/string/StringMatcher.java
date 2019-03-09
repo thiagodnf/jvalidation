@@ -31,8 +31,29 @@ public class StringMatcher extends ObjectMatcher{
 			return this;
 		}
 
-		throw getException("Expected start with but it was %s", target);
+		throw getException("Expected string starts with but it was %s", target);
 	}
 
+	public StringMatcher endsWith(String suffix) {
+
+		notNull();
+		
+		if (target.endsWith(suffix)) {
+			return this;
+		}
+
+		throw getException("Expected string ends with but it was %s", target);
+	}
+	
+	public StringMatcher contains(String sequence) {
+
+		notNull();
+		
+		if (target.contains(sequence)) {
+			return this;
+		}
+
+		throw getException("Expected string ends with but it was %s", target);
+	}
 	
 }

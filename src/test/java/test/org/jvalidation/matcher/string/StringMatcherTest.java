@@ -43,4 +43,36 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call endsWith()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).endsWith("abc");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("abcd").endsWith("abc");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("abc").endsWith("abc");
+			new StringMatcher("dabc").endsWith("abc");
+		});
+	});
+	
+	describe("when call contains()", () -> {
+		
+		it("should throw an exception with null target", () -> {
+			expect(() -> { new StringMatcher(null).contains("abc");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("adbcd").contains("abc");}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("abc").contains("abc");
+			new StringMatcher("dabce").contains("abc");
+		});
+	});
+	
 }}
