@@ -7,7 +7,7 @@
 	<version>1.4.0</version>
 	<name>jvalidation</name>
 	<packaging>jar</packaging>
-	<description>A simple, fast and light-weight validation tool to express pre- and post-conditions in your code</description>
+	<description>A simple, fast and light-weight validation tool to express pre- and post-conditions in your java code</description>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
