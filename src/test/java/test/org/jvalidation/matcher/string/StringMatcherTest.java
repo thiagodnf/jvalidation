@@ -173,4 +173,64 @@ public class StringMatcherTest {{
 		});
 	});
 	
+	describe("when call maxLength()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("123").maxLength(2);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("1234").maxLength(2);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("").maxLength(3);
+			new StringMatcher("1").maxLength(3);
+			new StringMatcher("12").maxLength(3);
+			new StringMatcher("123").maxLength(3);
+		});
+	});
+	
+	describe("when call minLength()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("1").minLength(2);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new StringMatcher("").minLength(2);}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("12").minLength(2);
+			new StringMatcher("123").minLength(2);
+		});
+	});
+	
+	describe("when call nullValue()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher("2").nullValue();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher(null).nullValue();
+		});
+	});
+	
+	describe("when call notNullValue()", () -> {
+		
+		it("should throw an exception", () -> {
+			expect(() -> { new StringMatcher(null).notNull();}).toThrow(IllegalArgumentException.class);
+		});
+		
+		it("should not throw an exception", () -> {
+			new StringMatcher("2").notNull();
+		});
+	});
+	
+	describe("when call multiple conditions at the same time", () -> {
+		
+		describe("with notNull(), notEmpty() and length()", () -> {
+			
+			it("should not throw an exception", () -> {
+				new StringMatcher("test").notNull().notEmpty().length(4);
+			});
+		});
+	});
+	
 }}

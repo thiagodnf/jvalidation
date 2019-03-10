@@ -4,14 +4,10 @@ import java.util.regex.Pattern;
 
 import org.jvalidation.matcher.object.ObjectMatcher;
 
-public class StringMatcher extends ObjectMatcher{
-
-	protected String target;
+public class StringMatcher extends ObjectMatcher<String>{
 
 	public StringMatcher(String target) {
 		super(target);
-		
-		this.target = target;
 	}
 
 	public StringMatcher empty() {
@@ -84,6 +80,28 @@ public class StringMatcher extends ObjectMatcher{
 		return matches(Pattern.compile(pattern));
 	}
 	
+	public StringMatcher minLength(int minLength) {
+
+		notNull();
+		
+		if (target.length() >= minLength) {
+			return this;
+		}
+
+		throw getException("Expected string with min length %s but it was %s", minLength, target.length());
+	}
+	
+	public StringMatcher maxLength(int maxLength) {
+
+		notNull();
+		
+		if (target.length() <= maxLength) {
+			return this;
+		}
+
+		throw getException("Expected string with max length %s but it was %s", maxLength, target.length());
+	}
+	
 	public StringMatcher length(int length) {
 
 		notNull();
@@ -124,5 +142,15 @@ public class StringMatcher extends ObjectMatcher{
 		}
 
 		throw getException("Expected a not blank string but it was %s", target);
+	}
+	
+	@Override
+	public StringMatcher notNull() {
+		return (StringMatcher) super.notNull();
+	}
+	
+	@Override
+	public StringMatcher nullValue() {
+		return (StringMatcher) super.nullValue();
 	}
 }

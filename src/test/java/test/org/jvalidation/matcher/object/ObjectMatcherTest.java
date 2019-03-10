@@ -15,44 +15,44 @@ public class ObjectMatcherTest {{
 	describe("when call nullValue()", () -> {
 		
 		it("should throw an exception", () -> {
-			expect(() -> { new ObjectMatcher(2).nullValue();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new ObjectMatcher<Object>(2).nullValue();}).toThrow(IllegalArgumentException.class);
 		});
 		
 		it("should not throw an exception", () -> {
-			new ObjectMatcher(null).nullValue();
+			new ObjectMatcher<Object>(null).nullValue();
 		});
 	});
 	
 	describe("when call notNullValue()", () -> {
 		
 		it("should throw an exception", () -> {
-			expect(() -> { new ObjectMatcher(null).notNull();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new ObjectMatcher<Object>(null).notNull();}).toThrow(IllegalArgumentException.class);
 		});
 		
 		it("should not throw an exception", () -> {
-			new ObjectMatcher(2).notNull();
+			new ObjectMatcher<Object>(2).notNull();
 		});
 	});
 	
 	describe("when call instanceOf()", () -> {
 		
 		it("should throw an exception", () -> {
-			expect(() -> { new ObjectMatcher("Test").instanceOf(Integer.class);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new ObjectMatcher<Object>("Test").instanceOf(Integer.class);}).toThrow(IllegalArgumentException.class);
 		});
 		
 		it("should not throw an exception", () -> {
-			new ObjectMatcher("Test").instanceOf(String.class);
+			new ObjectMatcher<Object>("Test").instanceOf(String.class);
 		});
 	});
 	
 	describe("when call notInstanceOf()", () -> {
 		
 		it("should throw an exception", () -> {
-			expect(() -> { new ObjectMatcher("Test").notInstanceOf(String.class);}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new ObjectMatcher<Object>("Test").notInstanceOf(String.class);}).toThrow(IllegalArgumentException.class);
 		});
 		
 		it("should not throw an exception", () -> {
-			new ObjectMatcher("Test").notInstanceOf(Integer.class);
+			new ObjectMatcher<Object>("Test").notInstanceOf(Integer.class);
 		});
 	});
 }}

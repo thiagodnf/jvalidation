@@ -40,8 +40,8 @@ public class Assertive {
 		return new DoubleMatcher((double) object);
 	}
 	
-	public ObjectMatcher isObject() {
-		return new ObjectMatcher(object);
+	public ObjectMatcher<Object> isObject() {
+		return new ObjectMatcher<Object>(object);
 	}
 	
 	public StringMatcher isString() {
