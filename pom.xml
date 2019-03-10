@@ -129,6 +129,20 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Generate a jar file with javadocs code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- Generate java with dependencies -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>

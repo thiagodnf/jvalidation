@@ -20,6 +20,11 @@ public class ListMatcher extends ObjectMatcher<List<?>> {
 		return (ListMatcher) super.nullValue();
 	}
 	
+	/**
+	 * Verify if the examined list is empty. Otherwise, an exception is thrown
+	 * 
+	 * @return the same instance for attaching another rule if desired
+	 */
 	public ListMatcher empty() {
 
 		notNull();
