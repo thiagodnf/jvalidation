@@ -57,6 +57,10 @@ public class DoubleMatcher extends Matcher{
 	
 	public DoubleMatcher between(double min, double max) {
 		
+		if (min > max) {
+			throw new IllegalArgumentException("The min should be >= max value");
+		}
+		
 		if (target >= min && target <= max) {
 			return this;
 		}

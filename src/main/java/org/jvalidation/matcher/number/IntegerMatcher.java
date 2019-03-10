@@ -57,6 +57,10 @@ public class IntegerMatcher extends Matcher{
 	
 	public IntegerMatcher between(int min, int max) {
 		
+		if (min > max) {
+			throw new IllegalArgumentException("The min should be >= max value");
+		}
+		
 		if (target >= min && target <= max) {
 			return this;
 		}

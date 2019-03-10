@@ -115,10 +115,15 @@ public class IntegerMatcherTest {
 			expect(() -> { matcher.between(10, 12);}).toThrow(IllegalArgumentException.class);
 		});
 		
+		it("should throw an exception with inverted range", () -> {
+			expect(() -> { matcher.between(2 , 1);}).toThrow(IllegalArgumentException.class);
+		});
+		
 		it("should not throw an exception", () -> {
 			matcher.between(8,20);
 			matcher.between(9,20);
 			matcher.between(1,9);
+			matcher.between(9,9);
 		});
 	});
 	
