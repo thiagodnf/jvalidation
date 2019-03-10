@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/jvalidation/jvalidation/master/src/main/resources/logo-full.png" width="500px"/>
 
-A simple, fast and light-weight validation tool to express pre- and post-conditions in your code
+A simple, fast and light-weight validation tool to express pre- and post-conditions in your java code
 
 ## Status
 [![Build Status](https://travis-ci.org/jvalidation/jvalidation.svg?branch=master)](https://travis-ci.org/jvalidation/jvalidation)
