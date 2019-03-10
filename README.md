@@ -32,7 +32,7 @@ Then add a dependency into tag of your pom.xml
 <dependency>
     <groupId>org.jvalidation</groupId>
     <artifactId>jvalidation</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
 </dependency>
 ```
 
@@ -101,6 +101,7 @@ This project uses the concept of matchers in which each one is responsible for v
  - [DoubleMatcher](https://github.com/jvalidation/jvalidation/wiki/DoubleMatcher) 
  - [StringMatcher](https://github.com/jvalidation/jvalidation/wiki/StringMatcher) 
  - [CharMatcher](https://github.com/jvalidation/jvalidation/wiki/CharMatcher) 
+ - [ListMatcher](https://github.com/jvalidation/jvalidation/wiki/ListMatcher) 
  
 ## Contributions
 
