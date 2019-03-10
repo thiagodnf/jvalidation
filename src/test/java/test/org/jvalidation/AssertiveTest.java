@@ -8,6 +8,9 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.beforeEach;
 import org.junit.runner.RunWith;
 import org.jvalidation.Assertive;
 import static org.jvalidation.Assertive.require;
+
+import java.util.Arrays;
+
 import static org.jvalidation.Assertive.ensure;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
@@ -98,6 +101,7 @@ public class AssertiveTest {
 		it("should return not null object)", () -> {
 			expect(new Assertive("abc").isString()).toBeNotNull();
 			expect(new Assertive('a').isChar()).toBeNotNull();
+			expect(new Assertive(Arrays.asList()).isList()).toBeNotNull();
 		});
 	});
 	
@@ -105,6 +109,7 @@ public class AssertiveTest {
 
 		it("should throw an exception with isDouble()", () -> {
 			expect(() -> { new Assertive("a").isChar();}).toThrow(IllegalArgumentException.class);
+			expect(() -> { new Assertive("a").isList();}).toThrow(IllegalArgumentException.class);
 		});
 	});
 		

@@ -1,5 +1,8 @@
 package org.jvalidation;
 
+import java.util.List;
+
+import org.jvalidation.matcher.collection.ListMatcher;
 import org.jvalidation.matcher.number.DoubleMatcher;
 import org.jvalidation.matcher.number.IntegerMatcher;
 import org.jvalidation.matcher.object.ObjectMatcher;
@@ -60,5 +63,14 @@ public class Assertive {
 		}
 
 		return new CharMatcher((char) object);
+	}
+	
+	public ListMatcher isList() {
+
+		if (!(object instanceof List)) {
+			throw new IllegalArgumentException("The value is not a list");
+		}
+
+		return new ListMatcher((List<?>) object);
 	}
 }
