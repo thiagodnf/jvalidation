@@ -1,5 +1,5 @@
 #!/bin/sh
 
-mvn deploy
+mvn clean deploy
 
-cp -r ./target/mvn-repo mvn-repo
+#cp -r ./target/mvn-repo mvn-repo
