@@ -34,7 +34,7 @@ Then add a dependency into tag of your pom.xml
 <dependency>
     <groupId>thiagodnf.jvalidation</groupId>
     <artifactId>jvalidation</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
 </dependency>
 ```
 
