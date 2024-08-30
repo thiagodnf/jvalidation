@@ -13,7 +13,7 @@ A simple, fast and light-weight validation tool to express pre- and post-conditi
 
 - Simple and Complex rules
 - More than 100 (fully tested) validators
-- Works on Java 1.8
+- Works on Java 21+
 
 ## How to install
 
