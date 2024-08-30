@@ -23,7 +23,7 @@ This project uses GitHub as a Maven Repository. Then you have just add the follo
 <repositories>
     <repository>
         <id>jvalidation-github</id>
-        <url>https://github.com/thiagodnf/jvalidation/raw/master/mvn-repo</url>
+        <url>https://github.com/thiagodnf/mvn-repo/raw/master/releases</url>
     </repository>
 </repositories>
 ```
