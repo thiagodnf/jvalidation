@@ -7,9 +7,10 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
 import java.util.Arrays;
 
 import org.junit.runner.RunWith;
-import org.jvalidation.matcher.collection.ListMatcher;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
+
+import thiagodnf.jvalidation.matcher.collection.ListMatcher;
 
 @RunWith(OleasterRunner.class)
 public class ListMatcherTest {{

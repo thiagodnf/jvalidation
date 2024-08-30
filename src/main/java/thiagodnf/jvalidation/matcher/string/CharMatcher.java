@@ -1,6 +1,6 @@
-package org.jvalidation.matcher.string;
+package thiagodnf.jvalidation.matcher.string;
 
-import org.jvalidation.matcher.Matcher;
+import thiagodnf.jvalidation.matcher.Matcher;
 
 public class CharMatcher extends Matcher {
 

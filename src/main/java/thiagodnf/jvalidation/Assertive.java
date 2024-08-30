@@ -1,13 +1,13 @@
-package org.jvalidation;
+package thiagodnf.jvalidation;
 
 import java.util.List;
 
-import org.jvalidation.matcher.collection.ListMatcher;
-import org.jvalidation.matcher.number.DoubleMatcher;
-import org.jvalidation.matcher.number.IntegerMatcher;
-import org.jvalidation.matcher.object.ObjectMatcher;
-import org.jvalidation.matcher.string.CharMatcher;
-import org.jvalidation.matcher.string.StringMatcher;
+import thiagodnf.jvalidation.matcher.collection.ListMatcher;
+import thiagodnf.jvalidation.matcher.number.DoubleMatcher;
+import thiagodnf.jvalidation.matcher.number.IntegerMatcher;
+import thiagodnf.jvalidation.matcher.object.ObjectMatcher;
+import thiagodnf.jvalidation.matcher.string.CharMatcher;
+import thiagodnf.jvalidation.matcher.string.StringMatcher;
 
 public class Assertive {
 	

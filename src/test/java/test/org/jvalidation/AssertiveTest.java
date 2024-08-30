@@ -3,17 +3,17 @@ package test.org.jvalidation;
 import static com.mscharhag.oleaster.matcher.Matchers.expect;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.describe;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
+import static thiagodnf.jvalidation.Assertive.ensure;
+import static thiagodnf.jvalidation.Assertive.require;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.beforeEach;
 
 import org.junit.runner.RunWith;
-import org.jvalidation.Assertive;
-import static org.jvalidation.Assertive.require;
 
 import java.util.Arrays;
 
-import static org.jvalidation.Assertive.ensure;
-
 import com.mscharhag.oleaster.runner.OleasterRunner;
+
+import thiagodnf.jvalidation.Assertive;
 
 @RunWith(OleasterRunner.class)
 public class AssertiveTest {

@@ -1,8 +1,8 @@
-package org.jvalidation.matcher.collection;
+package thiagodnf.jvalidation.matcher.collection;
 
 import java.util.List;
 
-import org.jvalidation.matcher.object.ObjectMatcher;
+import thiagodnf.jvalidation.matcher.object.ObjectMatcher;
 
 public class ListMatcher extends ObjectMatcher<List<?>> {
 

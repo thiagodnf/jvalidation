@@ -1,8 +1,8 @@
-package org.jvalidation.matcher.string;
+package thiagodnf.jvalidation.matcher.string;
 
 import java.util.regex.Pattern;
 
-import org.jvalidation.matcher.object.ObjectMatcher;
+import thiagodnf.jvalidation.matcher.object.ObjectMatcher;
 
 public class StringMatcher extends ObjectMatcher<String>{
 

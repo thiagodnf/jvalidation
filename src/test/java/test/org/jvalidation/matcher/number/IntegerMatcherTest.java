@@ -6,9 +6,10 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.describe;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
 
 import org.junit.runner.RunWith;
-import org.jvalidation.matcher.number.IntegerMatcher;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
+
+import thiagodnf.jvalidation.matcher.number.IntegerMatcher;
 
 @RunWith(OleasterRunner.class)
 public class IntegerMatcherTest {

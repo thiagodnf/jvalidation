@@ -5,9 +5,10 @@ import static com.mscharhag.oleaster.runner.StaticRunnerSupport.describe;
 import static com.mscharhag.oleaster.runner.StaticRunnerSupport.it;
 
 import org.junit.runner.RunWith;
-import org.jvalidation.matcher.string.StringMatcher;
 
 import com.mscharhag.oleaster.runner.OleasterRunner;
+
+import thiagodnf.jvalidation.matcher.string.StringMatcher;
 
 @RunWith(OleasterRunner.class)
 public class StringMatcherTest {{

@@ -1,6 +1,6 @@
-package org.jvalidation.matcher.object;
+package thiagodnf.jvalidation.matcher.object;
 
-import org.jvalidation.matcher.Matcher;
+import thiagodnf.jvalidation.matcher.Matcher;
 
 public class ObjectMatcher<T> extends Matcher{
 

@@ -1,4 +1,4 @@
-package org.jvalidation.matcher;
+package thiagodnf.jvalidation.matcher;
 
 public abstract class Matcher {
 

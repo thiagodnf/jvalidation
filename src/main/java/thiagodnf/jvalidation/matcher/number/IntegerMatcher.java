@@ -1,6 +1,6 @@
-package org.jvalidation.matcher.number;
+package thiagodnf.jvalidation.matcher.number;
 
-import org.jvalidation.matcher.Matcher;
+import thiagodnf.jvalidation.matcher.Matcher;
 
 public class IntegerMatcher extends Matcher{
 
