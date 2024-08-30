@@ -23,7 +23,7 @@ This project uses GitHub as a Maven Repository. Then you have just add the follo
 <repositories>
     <repository>
         <id>jvalidation-github</id>
-        <url>https://github.com/jvalidation/mvn-repo/raw/master/releases</url>
+        <url>https://github.com/thiagodnf/jvalidation/raw/master/mvn-repo</url>
     </repository>
 </repositories>
 ```
@@ -32,9 +32,9 @@ Then add a dependency into tag of your pom.xml
 
 ```xml
 <dependency>
-    <groupId>org.jvalidation</groupId>
+    <groupId>thiagodnf.jvalidation</groupId>
     <artifactId>jvalidation</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
 </dependency>
 ```
 
