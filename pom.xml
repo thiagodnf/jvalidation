@@ -5,7 +5,7 @@
 
 	<groupId>thiagodnf.jvalidation</groupId>
 	<artifactId>jvalidation</artifactId>
-	<version>1.6.2</version>
+	<version>1.6.1</version>
 
 	<name>jvalidation</name>
 	<description>A simple, fast and light-weight validation tool to express pre-
