@@ -18,7 +18,7 @@ jobs:
 
       - id: version-decider
         name: Version Decider
-        uses: thiagodnf/version-decider@v1.0.7
+        uses: thiagodnf/version-decider@main
         with:
           file: ./pom.xml
         env:
