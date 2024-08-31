@@ -20,7 +20,7 @@ jobs:
         name: Version Decider
         uses: thiagodnf/version-decider@main
         with:
-          file: ./pom.xml
+          file: "${{ github.workspace }}/pom.xml"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
